@@ -1,0 +1,40 @@
+:root {
+  /* Warna — seed biru Google Material */
+  --md-primary: #0B57D0;
+  --md-on-primary: #FFFFFF;
+  --md-primary-container: #D3E3FD;
+  --md-on-primary-container: #041E49;
+  --md-secondary-container: #DDE3EA;
+  --md-on-secondary-container: #141D26;
+  --md-tertiary-container: #C2E7FF;
+  --md-on-tertiary-container: #001E2F;
+  --md-surface: #F8FAFD;
+  --md-surface-container-low: #F1F4F9;
+  --md-surface-container: #EBEEF4;
+  --md-on-surface: #1A1C1E;
+  --md-on-surface-variant: #44474E;
+  --md-outline: #74777F;
+  --md-outline-variant: #C4C6D0;
+  --md-error: #BA1A1A;
+
+  /* Font */
+  --font-ui: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-heading: "Outfit", system-ui, sans-serif;
+
+  /* Shape */
+  --r-card: 24px;
+  --r-search: 28px;
+  --r-chip: 8px;
+  --r-btn: 999px;
+  --r-fab: 16px;
+  --r-cover: 16px;
+  --r-cover-detail: 24px;
+
+  /* Spacing (kelipatan 4px) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-6: 24px;
+  --s-8: 32px;
+}
