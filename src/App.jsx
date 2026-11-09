@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { dataBuku } from "./data/buku.js";
 import AppBar from "./components/AppBar.jsx";
 import BottomNav from "./components/BottomNav.jsx";
+import SideNav from "./components/SideNav.jsx";
 import Beranda from "./pages/Beranda.jsx";
 import Katalog from "./pages/Katalog.jsx";
 import DetailBuku from "./pages/DetailBuku.jsx";
@@ -29,6 +30,7 @@ export default function App() {
   return (
     <div className="app">
       <AppBar />
+      <SideNav jumlahFavorit={favorit.length} />
       <main className="main">
         <Routes>
           <Route path="/" element={<Beranda {...shared} />} />

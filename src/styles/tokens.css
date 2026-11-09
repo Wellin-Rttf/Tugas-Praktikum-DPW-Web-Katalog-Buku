@@ -1,34 +1,66 @@
 :root {
-  /* Warna — seed biru Google Material */
-  --md-primary: #0B57D0;
-  --md-on-primary: #FFFFFF;
-  --md-primary-container: #D3E3FD;
-  --md-on-primary-container: #041E49;
-  --md-secondary-container: #DDE3EA;
-  --md-on-secondary-container: #141D26;
-  --md-tertiary-container: #C2E7FF;
-  --md-on-tertiary-container: #001E2F;
-  --md-surface: #F8FAFD;
-  --md-surface-container-low: #F1F4F9;
-  --md-surface-container: #EBEEF4;
-  --md-on-surface: #1A1C1E;
-  --md-on-surface-variant: #44474E;
-  --md-outline: #74777F;
-  --md-outline-variant: #C4C6D0;
-  --md-error: #BA1A1A;
+  color-scheme: light dark;
 
-  /* Font */
-  --font-ui: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-heading: "Outfit", system-ui, sans-serif;
+  /* ===== Color roles MD3, aksen Biru Tua (Navy) - Mode Terang ===== */
+  --md-sys-color-primary: #103766;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #D5E3FF;
+  --md-sys-color-on-primary-container: #001B3C;
+  --md-sys-color-secondary: #525F70;
+  --md-sys-color-secondary-container: #D5E3F7;
+  --md-sys-color-on-secondary-container: #0E1D2A;
+  --md-sys-color-tertiary: #695779;
+  --md-sys-color-tertiary-container: #F0DBFF;
+  --md-sys-color-on-tertiary-container: #240A33;
+  --md-sys-color-surface: #F8F9FF;
+  --md-sys-color-surface-variant: #DEE3EB;
+  --md-sys-color-surface-container-low: #F2F3FA;
+  --md-sys-color-surface-container: #ECEEF4;
+  --md-sys-color-surface-container-high: #E6E8EE;
+  --md-sys-color-on-surface: #181C20;
+  --md-sys-color-on-surface-variant: #42474E;
+  --md-sys-color-outline: #73777F;
+  --md-sys-color-outline-variant: #C2C7CF;
+  --md-sys-color-error: #BA1A1A;
 
-  /* Shape */
-  --r-card: 24px;
-  --r-search: 28px;
-  --r-chip: 8px;
-  --r-btn: 999px;
-  --r-fab: 16px;
-  --r-cover: 16px;
-  --r-cover-detail: 24px;
+  /* State layer */
+  --state-hover: 8%;
+  --state-focus: 12%;
+  --state-pressed: 12%;
+
+  /* Typography MD3 (Roboto) */
+  --font-ui: "Roboto", system-ui, sans-serif;
+  --md-display-large:   400 57px/64px var(--font-ui);
+  --md-display-medium:  400 45px/52px var(--font-ui);
+  --md-display-small:   400 36px/44px var(--font-ui);
+  --md-headline-large:  400 32px/40px var(--font-ui);
+  --md-headline-medium: 400 28px/36px var(--font-ui);
+  --md-headline-small:  400 24px/32px var(--font-ui);
+  --md-title-large:     400 22px/28px var(--font-ui);
+  --md-title-medium:    500 16px/24px var(--font-ui);
+  --md-title-small:     500 14px/20px var(--font-ui);
+  --md-body-large:      400 16px/24px var(--font-ui);
+  --md-body-medium:     400 14px/20px var(--font-ui);
+  --md-body-small:      400 12px/16px var(--font-ui);
+  --md-label-large:     500 14px/20px var(--font-ui);
+  --md-label-medium:    500 12px/16px var(--font-ui);
+  --md-label-small:     500 11px/16px var(--font-ui);
+
+  /* Shape: skala MD3 */
+  --r-xs: 4px;
+  --r-sm: 8px;      /* chip, input teks */
+  --r-md: 12px;     /* kartu, wadah gambar kecil */
+  --r-lg: 16px;     /* FAB, drawer, cover detail */
+  --r-full: 9999px; /* tombol, search bar */
+  --r-card: var(--r-md);
+  --r-dialog: var(--r-md);
+  --r-chip: var(--r-sm);
+  --r-field: var(--r-sm);
+  --r-search: var(--r-full);
+  --r-btn: var(--r-full);
+  --r-fab: var(--r-lg);
+  --r-cover: var(--r-md);
+  --r-cover-detail: var(--r-lg);
 
   /* Spacing (kelipatan 4px) */
   --s-1: 4px;
@@ -37,4 +69,30 @@
   --s-4: 16px;
   --s-6: 24px;
   --s-8: 32px;
+}
+
+/* ===== Mode Gelap ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #A6C8FF;
+    --md-sys-color-on-primary: #003062;
+    --md-sys-color-primary-container: #00468A;
+    --md-sys-color-on-primary-container: #D5E3FF;
+    --md-sys-color-secondary: #BAC7DB;
+    --md-sys-color-secondary-container: #3A4857;
+    --md-sys-color-on-secondary-container: #D6E4F7;
+    --md-sys-color-tertiary: #D4BEE6;
+    --md-sys-color-tertiary-container: #514060;
+    --md-sys-color-on-tertiary-container: #F0DBFF;
+    --md-sys-color-surface: #101418;
+    --md-sys-color-surface-variant: #42474E;
+    --md-sys-color-surface-container-low: #181C20;
+    --md-sys-color-surface-container: #1C2024;
+    --md-sys-color-surface-container-high: #272A2F;
+    --md-sys-color-on-surface: #E1E2E8;
+    --md-sys-color-on-surface-variant: #C2C7CF;
+    --md-sys-color-outline: #8C9199;
+    --md-sys-color-outline-variant: #42474E;
+    --md-sys-color-error: #FFB4AB;
+  }
 }
