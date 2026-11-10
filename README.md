@@ -20,7 +20,7 @@
 
 ## Fitur Utama
 
-- **Tampilanbuku-buku pilihan untuk memulai penjelajahan.
+- Tampilan buku-buku pilihan untuk memulai penjelajahan.
 
 - Katalog dan pencarian untuk mencari buku berdasarkan judul atau penulis, serta memfilter berdasarkan genre menggunakan *chip filter*.
 
@@ -34,7 +34,7 @@
 
 - Desain responsif, di mana mobile enggunakan `Bottom Navigation`. *Desktop* menggunakan `Side Navigation`.
 
-- **Semua data (buku tambahan, favorit, catatan, dan tema) disimpan di `localStorage` sehingga tidak hilang saat halaman di-*refresh*.
+- Semua data (buku tambahan, favorit, catatan, dan tema) disimpan di `localStorage` sehingga tidak hilang saat halaman di-*refresh*.
 
 ---
 
@@ -46,21 +46,6 @@
 - **State Management:** React Hooks (`useState`, `useEffect`, `useLayoutEffect`)
 - **Custom Hooks:** `useLocalStorage` (untuk sinkronisasi state dengan localStorage) dan `useTema` (untuk manajemen tema gelap/terang).
 - **Icons:** Material Symbols Rounded
-
----
-
-## 📂 Struktur Direktori
-
-Proyek ini disusun dengan arsitektur yang modular dan mudah dipelihara:
-
-src/
-├── components/     # Komponen UI yang dapat digunakan ulang (AppBar, BukuCard, dll)
-├── data/           # Data statis (daftar buku, genre, menu navigasi)
-├── hooks/          # Custom React Hooks (useLocalStorage, useTema)
-├── pages/          # Komponen halaman utama (Beranda, Katalog, DetailBuku, dll)
-├── styles/         # File CSS global dan Design Tokens (Material Design 3)
-├── App.jsx         # Routing utama dan state management global
-└── main.jsx        # Entry point aplikasi
 
 ---
 
