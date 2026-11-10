@@ -36,7 +36,7 @@ export const dataBuku = [
   },
   {
     id: "b4",
-    judul: "Animal Far,",
+    judul: "Animal Farm",
     penulis: "George Orwell",
     genre: "Distopia",
     tahun: 2021,
