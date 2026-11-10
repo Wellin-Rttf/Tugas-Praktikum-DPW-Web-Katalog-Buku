@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CoverBuku from "./CoverBuku.jsx";
 import TombolFavorit from "./TombolFavorit.jsx";
+import { pecahGenre } from "../data/genre.js";
 
 export default function BukuCard({ buku, isFavorit, onToggleFavorit }) {
   return (
@@ -11,7 +12,7 @@ export default function BukuCard({ buku, isFavorit, onToggleFavorit }) {
           <h3 className="judul-buku">{buku.judul}</h3>
           <p className="buku-card__penulis">{buku.penulis}</p>
           <p className="caption">
-            {buku.genre} · {buku.tahun}
+            {pecahGenre(buku.genre).join(", ")} · {buku.tahun}
           </p>
         </div>
       </Link>

@@ -1,10 +1,9 @@
 import { NavLink, Link } from "react-router-dom";
 import Ikon from "./Ikon.jsx";
+import TombolTema from "./TombolTema.jsx";
 import { menu } from "../data/menu.js";
 
-// Navigation Rail (600-839px) dan Navigation Drawer permanen (>= 840px).
-// Bentuknya diatur sepenuhnya lewat CSS.
-export default function SideNav({ jumlahFavorit = 0 }) {
+export default function SideNav({ jumlahFavorit = 0, gelap, onToggleTema }) {
   return (
     <aside className="sidenav">
       <Link to="/" className="sidenav__brand" aria-label="Rak Buku, ke Beranda">
@@ -31,6 +30,9 @@ export default function SideNav({ jumlahFavorit = 0 }) {
           </NavLink>
         ))}
       </nav>
+      <div className="sidenav__tema">
+        <TombolTema gelap={gelap} onToggle={onToggleTema} />
+      </div>
     </aside>
   );
 }

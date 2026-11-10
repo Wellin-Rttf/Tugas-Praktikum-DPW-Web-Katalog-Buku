@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Ikon from "./Ikon.jsx";
+import TombolTema from "./TombolTema.jsx";
 
-// Top app bar: hanya tampil di layar Compact (< 600px)
-export default function AppBar() {
+export default function AppBar({ gelap, onToggleTema }) {
   return (
     <header className="appbar">
       <div className="appbar__inner">
@@ -10,6 +10,7 @@ export default function AppBar() {
           <Ikon nama="menu_book" terisi />
           <span>Rak Buku</span>
         </Link>
+        <TombolTema gelap={gelap} onToggle={onToggleTema} />
       </div>
     </header>
   );

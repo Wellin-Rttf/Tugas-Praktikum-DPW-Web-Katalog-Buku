@@ -3,8 +3,17 @@ import CoverBuku from "../components/CoverBuku.jsx";
 import TombolFavorit from "../components/TombolFavorit.jsx";
 import EmptyState from "../components/EmptyState.jsx";
 import Ikon from "../components/Ikon.jsx";
+import CatatanBuku from "../components/CatatanBuku.jsx";
+import { pecahGenre } from "../data/genre.js";
 
-export default function DetailBuku({ daftarBuku, favorit, onToggleFavorit }) {
+export default function DetailBuku({
+  daftarBuku,
+  favorit,
+  onToggleFavorit,
+  catatan = {},
+  onTambahCatatan,
+  onHapusCatatan,
+}) {
   const { id } = useParams();
   const buku = daftarBuku.find((b) => b.id === id);
 
@@ -39,7 +48,11 @@ export default function DetailBuku({ daftarBuku, favorit, onToggleFavorit }) {
           <p className="detail__meta">
             {buku.penulis} · {buku.tahun}
           </p>
-          <span className="chip chip--statis">{buku.genre}</span>
+          <div className="chips">
+            {pecahGenre(buku.genre).map((g) => (
+              <span key={g} className="chip chip--statis">{g}</span>
+            ))}
+          </div>
           <div className="detail__aksi">
             <TombolFavorit
               varian="tombol"
@@ -49,6 +62,12 @@ export default function DetailBuku({ daftarBuku, favorit, onToggleFavorit }) {
           </div>
           <h2 className="detail__sub">Sinopsis</h2>
           <p className="detail__sinopsis">{buku.sinopsis}</p>
+
+          <CatatanBuku
+            daftar={catatan[buku.id] ?? []}
+            onTambah={(teks) => onTambahCatatan(buku.id, teks)}
+            onHapus={(idCatatan) => onHapusCatatan(buku.id, idCatatan)}
+          />
         </div>
       </div>
     </div>

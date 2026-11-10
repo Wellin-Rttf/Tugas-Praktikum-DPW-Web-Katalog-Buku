@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import Ikon from "./Ikon.jsx";
 import { menu } from "../data/menu.js";
 
-// Navigation Bar: layar Compact (< 600px)
 export default function BottomNav({ jumlahFavorit = 0 }) {
   return (
     <nav className="bottomnav" aria-label="Navigasi bawah">

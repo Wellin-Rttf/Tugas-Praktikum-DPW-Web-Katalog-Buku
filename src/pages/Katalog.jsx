@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { GENRE } from "../data/buku.js";
+import { punyaGenre, semuaGenre } from "../data/genre.js";
 import ChipFilter from "../components/ChipFilter.jsx";
 import GridBuku from "../components/GridBuku.jsx";
 import EmptyState from "../components/EmptyState.jsx";
@@ -14,7 +14,7 @@ export default function Katalog({ daftarBuku, favorit, onToggleFavorit }) {
 
   const kata = query.trim().toLowerCase();
   const hasil = daftarBuku
-    .filter((b) => genreAktif === "Semua" || b.genre === genreAktif)
+    .filter((b) => genreAktif === "Semua" || punyaGenre(b, genreAktif))
     .filter(
       (b) =>
         b.judul.toLowerCase().includes(kata) ||
@@ -42,7 +42,7 @@ export default function Katalog({ daftarBuku, favorit, onToggleFavorit }) {
       </div>
 
       <div className="chips" role="tablist" aria-label="Filter genre">
-        {["Semua", ...GENRE].map((g) => (
+        {["Semua", ...semuaGenre(daftarBuku)].map((g) => (
           <ChipFilter
             key={g}
             label={g}

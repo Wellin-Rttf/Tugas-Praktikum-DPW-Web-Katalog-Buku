@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GENRE } from "../data/buku.js";
+import { normalisasiGenre, pecahGenre } from "../data/genre.js";
 
 const awal = { judul: "", penulis: "", genre: "", tahun: "", sinopsis: "" };
 
@@ -17,11 +18,25 @@ export default function TambahBuku({ onTambahBuku }) {
     if (error[name]) setError((prev) => ({ ...prev, [name]: "" }));
   };
 
+  const genreDipilih = pecahGenre(form.genre).map((g) => g.toLowerCase());
+
+  const onToggleSaran = (g) => {
+    const daftar = pecahGenre(form.genre);
+    const ada = daftar.some((x) => x.toLowerCase() === g.toLowerCase());
+    const baru = ada
+      ? daftar.filter((x) => x.toLowerCase() !== g.toLowerCase())
+      : [...daftar, g];
+    setForm((prev) => ({ ...prev, genre: baru.join(", ") }));
+    if (error.genre) setError((prev) => ({ ...prev, genre: "" }));
+  };
+
   const validasi = () => {
     const e = {};
     if (!form.judul.trim()) e.judul = "Judul wajib diisi.";
     if (!form.penulis.trim()) e.penulis = "Penulis wajib diisi.";
-    if (!form.genre) e.genre = "Pilih salah satu genre.";
+    const daftarGenre = pecahGenre(form.genre);
+    if (daftarGenre.length === 0) e.genre = "Isi minimal satu genre.";
+    else if (daftarGenre.some((g) => g.length > 30)) e.genre = "Setiap genre maksimal 30 karakter.";
     const tahun = Number(form.tahun);
     if (!/^\d{4}$/.test(form.tahun.trim()) || tahun < 1900 || tahun > tahunSekarang) {
       e.tahun = `Tahun harus angka antara 1900 dan ${tahunSekarang}.`;
@@ -39,7 +54,7 @@ export default function TambahBuku({ onTambahBuku }) {
       id: `b${Date.now()}`,
       judul: form.judul.trim(),
       penulis: form.penulis.trim(),
-      genre: form.genre,
+      genre: normalisasiGenre(form.genre),
       tahun: Number(form.tahun),
       sinopsis: form.sinopsis.trim() || "Belum ada sinopsis untuk buku ini.",
       gambar: "",
@@ -79,39 +94,52 @@ export default function TambahBuku({ onTambahBuku }) {
           {error.penulis && <p id="err-penulis" className="field__error">{error.penulis}</p>}
         </div>
 
-        <div className="field-row">
-          <div className="field">
-            <label htmlFor="genre">Genre</label>
-            <select
-              id="genre"
-              name="genre"
-              value={form.genre}
-              onChange={onChange}
-              aria-invalid={Boolean(error.genre)}
-              aria-describedby={error.genre ? "err-genre" : undefined}
-            >
-              <option value="">Pilih genre</option>
-              {GENRE.map((g) => (
-                <option key={g} value={g}>{g}</option>
-              ))}
-            </select>
-            {error.genre && <p id="err-genre" className="field__error">{error.genre}</p>}
+        <div className="field">
+          <label htmlFor="genre">Genre (pisahkan dengan koma)</label>
+          <input
+            id="genre"
+            name="genre"
+            value={form.genre}
+            onChange={onChange}
+            placeholder="Contoh: Fiksi, Sejarah"
+            aria-invalid={Boolean(error.genre)}
+            aria-describedby={error.genre ? "err-genre" : "bantu-genre"}
+          />
+          {error.genre ? (
+            <p id="err-genre" className="field__error">{error.genre}</p>
+          ) : (
+            <p id="bantu-genre" className="caption">
+              Boleh lebih dari satu. Ketik sendiri atau pilih saran di bawah.
+            </p>
+          )}
+          <div className="chips" aria-label="Saran genre">
+            {GENRE.map((g) => (
+              <button
+                key={g}
+                type="button"
+                className="chip"
+                aria-pressed={genreDipilih.includes(g.toLowerCase())}
+                onClick={() => onToggleSaran(g)}
+              >
+                {g}
+              </button>
+            ))}
           </div>
+        </div>
 
-          <div className="field">
-            <label htmlFor="tahun">Tahun Terbit</label>
-            <input
-              id="tahun"
-              name="tahun"
-              inputMode="numeric"
-              maxLength={4}
-              value={form.tahun}
-              onChange={onChange}
-              aria-invalid={Boolean(error.tahun)}
-              aria-describedby={error.tahun ? "err-tahun" : undefined}
-            />
-            {error.tahun && <p id="err-tahun" className="field__error">{error.tahun}</p>}
-          </div>
+        <div className="field">
+          <label htmlFor="tahun">Tahun Terbit</label>
+          <input
+            id="tahun"
+            name="tahun"
+            inputMode="numeric"
+            maxLength={4}
+            value={form.tahun}
+            onChange={onChange}
+            aria-invalid={Boolean(error.tahun)}
+            aria-describedby={error.tahun ? "err-tahun" : undefined}
+          />
+          {error.tahun && <p id="err-tahun" className="field__error">{error.tahun}</p>}
         </div>
 
         <div className="field">
