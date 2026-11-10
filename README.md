@@ -57,7 +57,7 @@ Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) di komputer Anda.
    
    ```bash
    git clone https://github.com/Wellin-Rttf/Tugas-Praktikum-DPW-Web-Katalog-Buku.git
-   cd Tugas-Praktikum-DPW-Web-Katalog-Buku
+   cd 'Tugas-Praktikum-DPW-Web-Katalog-Buku'
    ```
 
 2. **Instal dependensi**
@@ -73,4 +73,5 @@ Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) di komputer Anda.
    ```
 
 4. **Buka di browser**
+   
    Buka tautan yang muncul di terminal (biasanya `http://localhost:5173`).
