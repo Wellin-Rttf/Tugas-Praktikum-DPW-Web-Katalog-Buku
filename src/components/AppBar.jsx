@@ -8,7 +8,7 @@ export default function AppBar({ gelap, onToggleTema }) {
       <div className="appbar__inner">
         <Link to="/" className="appbar__brand">
           <Ikon nama="menu_book" terisi />
-          <span>Rak Buku</span>
+          <span>Katalog Buku</span>
         </Link>
         <TombolTema gelap={gelap} onToggle={onToggleTema} />
       </div>

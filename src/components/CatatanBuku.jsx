@@ -17,10 +17,6 @@ export default function CatatanBuku({ daftar, onTambah, onHapus }) {
     setTeks("");
   };
 
-  const hapus = (id) => {
-    if (window.confirm("Hapus catatan ini?")) onHapus(id);
-  };
-
   return (
     <section className="catatan" aria-labelledby="catatan-judul">
       <h2 id="catatan-judul" className="detail__sub catatan__judul">
@@ -65,7 +61,7 @@ export default function CatatanBuku({ daftar, onTambah, onHapus }) {
                   className="btn-ikon btn-ikon--polos"
                   aria-label="Hapus catatan"
                   title="Hapus catatan"
-                  onClick={() => hapus(c.id)}
+                  onClick={() => onHapus(c.id)}
                 >
                   <Ikon nama="delete" />
                 </button>

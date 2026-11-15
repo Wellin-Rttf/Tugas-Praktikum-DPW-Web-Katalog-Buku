@@ -6,9 +6,9 @@ import { menu } from "../data/menu.js";
 export default function SideNav({ jumlahFavorit = 0, gelap, onToggleTema }) {
   return (
     <aside className="sidenav">
-      <Link to="/" className="sidenav__brand" aria-label="Rak Buku, ke Beranda">
+      <Link to="/" className="sidenav__brand" aria-label="Katalog Buku, ke Beranda">
         <Ikon nama="menu_book" terisi />
-        <span className="sidenav__brand-teks">Rak Buku</span>
+        <span className="sidenav__brand-teks">Katalog Buku</span>
       </Link>
       <nav className="sidenav__nav" aria-label="Navigasi utama">
         {menu.map((m) => (

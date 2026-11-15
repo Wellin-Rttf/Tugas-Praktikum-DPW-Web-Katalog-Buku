@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CoverBuku({ buku, ukuran = "card" }) {
+export default function CoverBuku({ buku, ukuran = "card", onGagal }) {
   const [gagal, setGagal] = useState(false);
   const adaGambar = Boolean(buku.gambar) && !gagal;
 
@@ -11,7 +11,10 @@ export default function CoverBuku({ buku, ukuran = "card" }) {
           src={buku.gambar}
           alt={`Cover buku ${buku.judul}`}
           loading={ukuran === "detail" ? "eager" : "lazy"}
-          onError={() => setGagal(true)}
+          onError={() => {
+            setGagal(true);
+            onGagal?.();
+          }}
         />
       ) : (
         <span className="cover__inisial" role="img" aria-label={`Cover buku ${buku.judul}`}>
