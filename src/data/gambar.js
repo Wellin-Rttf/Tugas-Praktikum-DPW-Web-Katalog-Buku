@@ -1,4 +1,3 @@
-// Kosong boleh; selain itu hanya http(s)://, data:image/..., atau path relatif "/..."
 export const urlValid = (v) => {
   if (v === undefined || v === null || v === "") return true;
   if (typeof v !== "string") return false;

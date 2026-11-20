@@ -5,7 +5,6 @@ import Ikon from "../components/Ikon.jsx";
 
 const JUMLAH_PILIHAN = 4;
 
-// Fisher-Yates: mengacak salinan, array asli tidak berubah.
 const acak = (daftar) => {
   const a = [...daftar];
   for (let i = a.length - 1; i > 0; i -= 1) {
@@ -33,9 +32,6 @@ export default function Beranda({
   );
   const jumlahSelesai = daftarBuku.filter((b) => statusBaca[b.id] === "selesai").length;
 
-  // Buku Pilihan: 4 buku acak. Yang diacak hanya daftar id, dan hanya berubah saat halaman
-  // dibuka, jumlah buku berubah, atau tombol "Acak ulang" ditekan. Jadi tidak ikut
-  // berganti ketika favorit/status/rating diubah. Datanya tetap diambil terbaru lewat id.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const idPilihan = useMemo(
     () => acak(daftarBuku.map((b) => b.id)).slice(0, JUMLAH_PILIHAN),

@@ -6,12 +6,10 @@ const sistemGelap = () =>
   typeof window !== "undefined" && !!window.matchMedia?.(QUERY).matches;
 
 export default function useTema() {
-  // Migrasi: "gelap"/"terang" lama tetap valid, null/lainnya dianggap "sistem".
   const [simpan, setSimpan] = useLocalStorage("katalog-buku:tema", null);
   const preferensi = simpan === "gelap" || simpan === "terang" ? simpan : "sistem";
   const [sistem, setSistem] = useState(sistemGelap);
 
-  // Listener hanya aktif saat preferensi "sistem".
   useEffect(() => {
     if (preferensi !== "sistem") return undefined;
     const mq = window.matchMedia?.(QUERY);

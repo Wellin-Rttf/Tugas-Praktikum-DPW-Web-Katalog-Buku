@@ -8,7 +8,6 @@ import { urutValid } from "./urut.js";
 const str = (v, maks) => String(v ?? "").slice(0, maks);
 const idBawaan = new Set(dataBuku.map((b) => b.id));
 
-// Mengembalikan data bersih dari berkas cadangan, atau null jika bentuknya salah.
 export const bersihkanBackup = (mentah) => {
   if (!mentah || mentah.aplikasi !== "katalog-buku" || typeof mentah.data !== "object" || !mentah.data) {
     return null;

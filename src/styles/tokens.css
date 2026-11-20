@@ -120,12 +120,7 @@
   --md-sys-color-inverse-primary: #274E7F;
 }
 
-/* ===== Warna aksen (biru = bawaan, tanpa override) =====
-   Tiap aksen menimpa SEMUA token warna (primary, secondary, tertiary, surface,
-   outline, dst.) supaya tidak ada sisa warna biru saat aksen diganti.
-   Palet dibuat dengan pemetaan tone MD3 standar dari warna seed tiap aksen. */
 
-/* Aksen: hijau */
 :root[data-aksen="hijau"] {
   --md-sys-color-primary: #2F6B4F;
   --md-sys-color-on-primary: #FFFFFF;
@@ -189,7 +184,6 @@
   --md-sys-color-tertiary-fixed: #B2EDF3;
 }
 
-/* Aksen: ungu */
 :root[data-aksen="ungu"] {
   --md-sys-color-primary: #5C4B8A;
   --md-sys-color-on-primary: #FFFFFF;
@@ -253,7 +247,6 @@
   --md-sys-color-tertiary-fixed: #FFD7F1;
 }
 
-/* Aksen: oranye */
 :root[data-aksen="oranye"] {
   --md-sys-color-primary: #8B4D00;
   --md-sys-color-on-primary: #FFFFFF;
@@ -317,7 +310,6 @@
   --md-sys-color-tertiary-fixed: #E8E6A2;
 }
 
-/* Aksen: rose */
 :root[data-aksen="rose"] {
   --md-sys-color-primary: #9C3A5E;
   --md-sys-color-on-primary: #FFFFFF;
@@ -381,7 +373,6 @@
   --md-sys-color-tertiary-fixed: #FFD6FE;
 }
 
-/* Aksen: teal */
 :root[data-aksen="teal"] {
   --md-sys-color-primary: #006A6A;
   --md-sys-color-on-primary: #FFFFFF;

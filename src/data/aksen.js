@@ -1,4 +1,3 @@
-// swatch = warna primary-container tiap aksen (sama dengan di tokens.css)
 export const AKSEN = [
   { id: "biru", label: "Biru", swatch: "#416699" },
   { id: "hijau", label: "Hijau", swatch: "#3F7A5E" },

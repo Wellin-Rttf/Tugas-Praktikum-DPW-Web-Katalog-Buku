@@ -1,6 +1,5 @@
 import Ikon from "./Ikon.jsx";
 
-// Klik bintang yang sama dengan nilai sekarang untuk menghapus rating.
 export default function RatingBintang({ nilai = 0, onPilih }) {
   return (
     <div className="bintang" role="radiogroup" aria-label="Rating">

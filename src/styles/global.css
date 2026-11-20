@@ -425,13 +425,11 @@ img { max-width: 100%; }
   .toast { animation: none; }
 }
 
-/* ===== Buku Pilihan (4 buku acak) ===== */
 .section-kepala { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-4); }
 .section-kepala .section-judul { margin-bottom: 0; }
 .grid-buku--empat { grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 840px) { .grid-buku--empat { grid-template-columns: repeat(4, 1fr); } }
 
-/* ===== Pengaturan: ringkasan koleksi ===== */
 .statistik { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-3); margin: 0; }
 .statistik__item { display: flex; flex-direction: column-reverse; gap: var(--s-1); padding: var(--s-4); border-radius: var(--r-md); background: var(--tonal-3); }
 .statistik__nilai { margin: 0; font: var(--md-title-large); letter-spacing: 0; color: var(--md-sys-color-primary); }

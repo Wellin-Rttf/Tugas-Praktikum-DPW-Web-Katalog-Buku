@@ -1,7 +1,6 @@
 import Ikon from "./Ikon.jsx";
 import { STATUS } from "../data/status.js";
 
-// Klik chip yang sedang aktif untuk menghapus status.
 export default function ChipStatusBaca({ nilai, onPilih }) {
   return (
     <div className="chips" role="group" aria-label="Status baca">
