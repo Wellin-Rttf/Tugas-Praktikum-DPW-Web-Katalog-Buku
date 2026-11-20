@@ -31,7 +31,7 @@ img { max-width: 100%; }
 .halaman { display: flex; flex-direction: column; gap: var(--s-4); }
 .halaman--sempit { max-width: 640px; }
 
-.page-judul { font: var(--md-headline-large); letter-spacing: 0; }
+.page-judul { font: var(--md-headline-large); letter-spacing: 0; font-weight: bold; }
 .section-judul { font: var(--md-title-large); letter-spacing: 0; margin-bottom: var(--s-4); }
 .hasil-info { font: var(--md-body-medium); letter-spacing: 0.25px; color: var(--md-sys-color-on-surface-variant); }
 

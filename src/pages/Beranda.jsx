@@ -78,7 +78,7 @@ export default function Beranda({
 
       <section>
         <div className="section-kepala">
-          <h2 className="section-judul">Buku Pilihan</h2>
+          <h2 className="section-judul">Saatnya Baca Buku!</h2>
           {daftarBuku.length > JUMLAH_PILIHAN && (
             <button type="button" className="btn btn--text" onClick={() => setPutaran((n) => n + 1)}>
               <Ikon nama="shuffle" />
